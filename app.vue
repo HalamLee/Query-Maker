@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { Constant } from "~/constant/Constant";
 
-let activeMenu: string;
-function setActiveMenu(menuIndex: number) {
-  activeMenu = Constant.SIDEBAR_ITEM[menuIndex].title;
+let activeItem: Ref<number> = ref(0);
 
-  console.log(menuIndex);
+function setActiveItem(menuIndex: number) {
+  console.log("menuIndex :", menuIndex);
+  activeItem.value = menuIndex;
 }
 </script>
 
 <template>
   <div id="App">
-    <Sidebar :setActiveMenu="setActiveMenu" :sidebarItem="[...Constant.SIDEBAR_ITEM]" />
-
-    <NuxtPage :currentTab="Constant.SIDEBAR_ITEM[0].title" />
+    <Sidebar :activeItem="activeItem" :sidebarItem="[...Constant.SIDEBAR_ITEM]" />
+    <NuxtPage :currentTab="Constant.SIDEBAR_ITEM[0].title" :setActiveItem="setActiveItem" />
   </div>
 </template>
 
@@ -22,6 +21,6 @@ function setActiveMenu(menuIndex: number) {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 </style>

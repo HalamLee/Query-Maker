@@ -1,14 +1,12 @@
 <script setup lang="ts">
 const props = defineProps({
-  setActiveMenu: Function,
+  activeItem: Number,
   sidebarItem: Array<{ title: string; link: string }>,
 });
-
-const activeMenu = ref(0);
 </script>
 
 <template>
-  <VanSidebar id="sidebar" class="sidebar-color" v-model="activeMenu">
+  <VanSidebar id="sidebar" class="sidebar-color" v-model="props.activeItem">
     <p id="title">QueryMaker</p>
 
     <VanSidebarItem
@@ -16,7 +14,6 @@ const activeMenu = ref(0);
       v-for="item in props.sidebarItem"
       :title="item.title"
       :to="item.link"
-      @click="props.setActiveMenu!(activeMenu)"
     />
   </VanSidebar>
 </template>
