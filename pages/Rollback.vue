@@ -1,5 +1,14 @@
-<template></template>
+<template>
+  <div class="rollback__wrapper">
+    <UnsupportedNotification />
+  </div>
+</template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<style scoped>
+.rollback__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
