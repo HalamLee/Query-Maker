@@ -12,14 +12,13 @@ const checked = ref(false);
       class="switch-checkbox"
       id="switch-checkbox"
       :checked="checked"
-      @change="checked = !checked"
       type="checkbox" />
-    <label class="switch-label" for="switch-checkbox">
+    <label class="switch-label">
       <div class="switch-content">
-        <div :class="{ active: !checked }">
+        <div :class="{ active: !checked }" @click="checked = false">
           {{ props.mode && props.mode[0] }}
         </div>
-        <div :class="{ active: checked }">
+        <div :class="{ active: checked }" @click="checked = true">
           {{ props.mode && props.mode[1] }}
         </div>
       </div>
@@ -74,7 +73,7 @@ const checked = ref(false);
 .switch-checkbox {
   width: 0;
   height: 0;
-  display: hidden;
+  display: none;
 }
 
 .active {
