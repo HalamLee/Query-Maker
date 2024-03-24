@@ -1,19 +1,12 @@
 <script setup lang="ts">
-import { Constant } from "~/constant/Constant";
-
-let activeMenu: string;
-function setActiveMenu(menuIndex: number) {
-  activeMenu = Constant.SIDEBAR_ITEM[menuIndex].title;
-
-  console.log(menuIndex);
-}
+import { Constant } from '~/constant/Constant';
 </script>
 
 <template>
   <div id="App">
-    <Sidebar :setActiveMenu="setActiveMenu" :sidebarItem="[...Constant.SIDEBAR_ITEM]" />
-
-    <NuxtPage :currentTab="Constant.SIDEBAR_ITEM[0].title" />
+    <NuxtLayout>
+      <NuxtPage :currentTab="Constant.SIDEBAR_ITEM[0].title" />
+    </NuxtLayout>
   </div>
 </template>
 
