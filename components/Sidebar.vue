@@ -9,15 +9,14 @@ const activeMenu = ref(0);
 
 <template>
   <VanSidebar id="sidebar" class="sidebar-color" v-model="activeMenu">
-    <p id="title">QueryMaker</p>
+    <p id="title">Query Maker</p>
 
     <VanSidebarItem
       class="sidebar-color"
       v-for="item in props.sidebarItem"
       :title="item.title"
       :to="item.link"
-      @click="props.setActiveMenu!(activeMenu)"
-    />
+      @click="props.setActiveMenu!(activeMenu)" />
   </VanSidebar>
 </template>
 
@@ -33,6 +32,7 @@ const activeMenu = ref(0);
 #title {
   font-size: 22px;
   font-weight: bold;
+  font-family: 'Kavoon', serif;
 }
 
 .sidebar-color {
