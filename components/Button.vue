@@ -1,6 +1,4 @@
-<template>
-  <div>Test Page</div>
-</template>
+<template></template>
 
 <script setup lang="ts"></script>
 
