@@ -1,9 +1,14 @@
 <script setup lang="ts">
 const props = defineProps({
-  mode: Array<String>,
+  mode: {
+    type: Array<String>,
+    default: ['File Upload', 'Editor'],
+  },
 });
 
 const checked = ref(false);
+
+const emit = defineEmits(['change-mode']);
 </script>
 
 <template>
@@ -15,11 +20,25 @@ const checked = ref(false);
       type="checkbox" />
     <label class="switch-label">
       <div class="switch-content">
-        <div :class="{ active: !checked }" @click="checked = false">
-          {{ props.mode && props.mode[0] }}
+        <div
+          :class="{ active: !checked }"
+          @click="
+            () => {
+              checked = false;
+              emit('change-mode', props.mode[0]);
+            }
+          ">
+          {{ props.mode[0] }}
         </div>
-        <div :class="{ active: checked }" @click="checked = true">
-          {{ props.mode && props.mode[1] }}
+        <div
+          :class="{ active: checked }"
+          @click="
+            () => {
+              checked = true;
+              emit('change-mode', props.mode[1]);
+            }
+          ">
+          {{ props.mode[1] }}
         </div>
       </div>
       <span class="switch-button"></span>
