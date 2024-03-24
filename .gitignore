@@ -8,7 +8,10 @@ dist
 
 # Node dependencies
 node_modules
+
+# lock
 pnpm-lock.yaml
+bun.lockb
 
 # Logs
 logs
