@@ -3,7 +3,7 @@ import Vant from '@vant/nuxt';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: [Vant],
+  modules: [Vant, 'nuxt-svgo'],
   css: ['~/assets/scss/_global.scss'],
   app: {
     head: {
@@ -13,9 +13,13 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Kavoon&family=Knewave&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Kavoon&family=Knewave&family=Noto+Sans+KR&display=swap',
         },
       ],
     },
+  },
+  svgo: {
+    svgo: true,
+    defaultImport: 'component',
   },
 });
