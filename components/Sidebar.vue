@@ -30,6 +30,7 @@ const props = defineProps({
 #title {
   font-size: 22px;
   font-weight: bold;
+  font-family: "Kavoon", serif;
 }
 
 .sidebar-color {
