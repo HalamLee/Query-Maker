@@ -42,7 +42,6 @@ function onClickMenu(index: string) {
 
 <style scoped>
 #sidebar {
-  width: 12%;
   height: 100vh;
   display: flex;
   flex-direction: column;

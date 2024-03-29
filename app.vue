@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Constant } from '~/constant/Constant';
+import { SIDEBAR_ITEM } from "~/constant/Constant";
 </script>
 
 <template>
   <div id="App">
     <NuxtLayout>
-      <NuxtPage :currentTab="Constant.SIDEBAR_ITEM[0].title" />
+      <NuxtPage :currentTab="SIDEBAR_ITEM[0].title" />
     </NuxtLayout>
   </div>
 </template>

@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { Constant } from "../constant/Constant";
+import { SIDEBAR_ITEM } from "../constant/Constant";
 
 let activeMenu: string;
 function setActiveMenu(menuIndex: number) {
-  activeMenu = Constant.SIDEBAR_ITEM[menuIndex].title;
+  activeMenu = SIDEBAR_ITEM[menuIndex].title;
 }
 </script>
 
 <template>
   <div class="wrapper">
     <Sidebar
+      class="menu"
       :setActiveMenu="setActiveMenu"
-      :sidebarItem="[...Constant.SIDEBAR_ITEM]"
+      :sidebarItem="[...SIDEBAR_ITEM]"
     />
-    <slot />
+    <slot class="main" />
   </div>
 </template>
 
@@ -22,5 +23,9 @@ function setActiveMenu(menuIndex: number) {
   width: 100vw;
   height: 100vh;
   display: flex;
+}
+
+.menu {
+  width: 13vw;
 }
 </style>
