@@ -1,12 +1,12 @@
+<script setup lang="ts">
+import XlsImportIcon from "~/assets/svg/XlsImport.svg";
+</script>
+
 <template>
   <div class="form__wrapper">
     <XlsImportIcon class="icon" />
   </div>
 </template>
-
-<script setup lang="ts">
-import XlsImportIcon from '~/assets/svg/XlsImport.svg';
-</script>
 
 <style scoped>
 .form__wrapper {
@@ -17,6 +17,7 @@ import XlsImportIcon from '~/assets/svg/XlsImport.svg';
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .icon {

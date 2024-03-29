@@ -16,7 +16,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@vant/nuxt": "^1.0.4",
+    "@element-plus/nuxt": "^1.0.8",
+    "element-plus": "^2.6.2",
     "sass": "^1.72.0"
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const mode = ref('File Upload');
+const mode = ref("File Upload");
 
 const changeMode = (name: string) => {
   mode.value = name;
@@ -31,6 +31,8 @@ const changeMode = (name: string) => {
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   margin-top: 80px;
   text-align: center;
   div {
@@ -39,7 +41,7 @@ const changeMode = (name: string) => {
 }
 
 .form-text {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: bold;
   color: #60a383;
 }

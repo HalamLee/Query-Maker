@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Constant } from '../constant/Constant';
+import { Constant } from "../constant/Constant";
 
 let activeMenu: string;
 function setActiveMenu(menuIndex: number) {
@@ -11,7 +11,8 @@ function setActiveMenu(menuIndex: number) {
   <div class="wrapper">
     <Sidebar
       :setActiveMenu="setActiveMenu"
-      :sidebarItem="[...Constant.SIDEBAR_ITEM]" />
+      :sidebarItem="[...Constant.SIDEBAR_ITEM]"
+    />
     <slot />
   </div>
 </template>
