@@ -80,6 +80,10 @@ const emit = defineEmits(['change-mode']);
 
   div {
     width: 136px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 }
