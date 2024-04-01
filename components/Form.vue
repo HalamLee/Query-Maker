@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { UploadUserFile } from "element-plus";
-import XlsImportIcon from "~/assets/svg/XlsImport.svg";
-import { useAPI } from "../composables/api";
+import type { UploadUserFile } from 'element-plus';
+import XlsImportIcon from '~/assets/svg/XlsImport.svg';
+import { useAPI } from '../composables/api';
 
 const props = defineProps({
   isLoading: Boolean,
@@ -19,7 +19,7 @@ function onClickRemoveFile(uid: number) {
 async function onClickTranslate() {
   if (props.onChangeTranslate) {
     props.onChangeTranslate(true);
-    const apiReturn = await useAPI("CREATE_QUERY_TABLE", {});
+    const apiReturn = await useAPI('CREATE_QUERY_TABLE', {});
 
     console.log(apiReturn);
 
@@ -34,7 +34,7 @@ async function onClickTranslate() {
     v-model:file-list="fileList"
     accept=".xls, .xlsx"
     :disabled="fileList.length !== 0"
-  >
+    class="uploader">
     <div class="form__wrapper">
       <XlsImportIcon class="icon" />
     </div>
@@ -50,8 +50,7 @@ async function onClickTranslate() {
             text
             :icon="ElIconDelete"
             circle
-            @click="onClickRemoveFile(file.uid)"
-          />
+            @click="onClickRemoveFile(file.uid)" />
         </div>
       </div>
     </template>
@@ -73,10 +72,25 @@ async function onClickTranslate() {
   </ElButtonGroup>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.uploader {
+  width: 600px;
+  height: fit-content;
+  :deep(.el-upload-dragger) {
+    width: 600px;
+    height: 340px;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 24px;
+    &:hover {
+      border: 2px dashed #60a383;
+    }
+  }
+}
+
 .form__wrapper {
-  width: 550px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   border-radius: 24px;
   display: flex;
   justify-content: center;
@@ -94,7 +108,7 @@ async function onClickTranslate() {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 5px;
+  margin: 10px;
 }
 
 .infoTag {
@@ -110,6 +124,6 @@ async function onClickTranslate() {
 }
 
 .infoFont {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 </style>
