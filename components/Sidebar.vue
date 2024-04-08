@@ -1,17 +1,15 @@
 <script setup lang="ts">
 const props = defineProps({
-  setActiveMenu: Function,
   sidebarItem: Array<{ index: string; title: string; link: string }>,
 })
 
-const activceMenu = ref('')
+const activeMenu = ref('')
 
-function onClickMenu(index: string) {
-  activceMenu.value = index
+const route = useRoute()
+activeMenu.value = route.path?.slice(1).toUpperCase()
 
-  if (props.setActiveMenu) {
-    props.setActiveMenu(index)
-  }
+function onClickMenu(title: string) {
+  activeMenu.value = title
 }
 </script>
 
@@ -28,11 +26,11 @@ function onClickMenu(index: string) {
       <ElMenuItem
         id="sidebar-item"
         class="sidebar-color"
-        :class="item.index === activceMenu ? 'active' : ''"
         v-for="item in props.sidebarItem"
+        :class="item.title === activeMenu ? 'active' : ''"
         :index="item.index"
         :route="item.link"
-        @click="onClickMenu(item.index)"
+        @click="onClickMenu(item.title)"
       >
         <span>{{ item.title }}</span>
       </ElMenuItem>
@@ -49,10 +47,11 @@ function onClickMenu(index: string) {
 }
 
 :deep(#sidebar-item) {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 100;
-  width: 150px;
-  height: 65px;
+  letter-spacing: 1px;
+  width: 130px;
+  height: 50px;
   border-radius: 14px;
   padding: 0;
   display: flex;
@@ -86,6 +85,7 @@ function onClickMenu(index: string) {
 .menuItem {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  margin-top: 30px;
 }
 </style>
