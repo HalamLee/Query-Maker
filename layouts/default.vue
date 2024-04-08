@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { SIDEBAR_ITEM } from "../constant/Constant";
+import { SIDEBAR_ITEM } from '../constant/Constant'
 
-let activeMenu: string;
+let activeMenu: string
 function setActiveMenu(menuIndex: number) {
-  activeMenu = SIDEBAR_ITEM[menuIndex].title;
+  activeMenu = SIDEBAR_ITEM[menuIndex].title
 }
 </script>
 

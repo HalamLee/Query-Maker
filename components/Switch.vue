@@ -4,11 +4,11 @@ const props = defineProps({
     type: Array<String>,
     default: ['File Upload', 'Editor'],
   },
-});
+})
 
-const checked = ref(false);
+const checked = ref(false)
 
-const emit = defineEmits(['change-mode']);
+const emit = defineEmits(['change-mode'])
 </script>
 
 <template>
@@ -17,27 +17,30 @@ const emit = defineEmits(['change-mode']);
       class="switch-checkbox"
       id="switch-checkbox"
       :checked="checked"
-      type="checkbox" />
+      type="checkbox"
+    />
     <label class="switch-label">
       <div class="switch-content">
         <div
           :class="{ active: !checked }"
           @click="
             () => {
-              checked = false;
-              emit('change-mode', props.mode[0]);
+              checked = false
+              emit('change-mode', props.mode[0])
             }
-          ">
+          "
+        >
           {{ props.mode[0] }}
         </div>
         <div
           :class="{ active: checked }"
           @click="
             () => {
-              checked = true;
-              emit('change-mode', props.mode[1]);
+              checked = true
+              emit('change-mode', props.mode[1])
             }
-          ">
+          "
+        >
           {{ props.mode[1] }}
         </div>
       </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SIDEBAR_ITEM } from "~/constant/Constant";
+import { SIDEBAR_ITEM } from '~/constant/Constant'
 </script>
 
 <template>

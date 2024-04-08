@@ -1,14 +1,14 @@
 <script setup lang="ts">
-const mode = ref("File Upload");
-const isLoading = ref(false);
+const mode = ref('File Upload')
+const isLoading = ref(false)
 
 const changeMode = (name: string) => {
-  mode.value = name;
-};
+  mode.value = name
+}
 
 function onChangeTranslate(state: boolean) {
-  console.log(state);
-  isLoading.value = state;
+  console.log(state)
+  isLoading.value = state
 }
 </script>
 
@@ -16,9 +16,9 @@ function onChangeTranslate(state: boolean) {
   <div class="create__wrapper" v-loading="isLoading">
     <Switch :mode="['File Upload', 'Editor']" @change-mode="changeMode" />
     <div v-if="mode === 'File Upload'" class="form">
-      <span class="form-text"
-        >클릭 또는 드래그를 통해 엑셀 파일을 업로드해 주세요.</span
-      >
+      <span class="form-text">
+        클릭 또는 드래그를 통해 엑셀 파일을 업로드해 주세요.
+      </span>
       <Form :isLoading="isLoading" :onChangeTranslate="onChangeTranslate" />
     </div>
     <div v-else class="notification">
@@ -48,7 +48,7 @@ function onChangeTranslate(state: boolean) {
 
 .form-text {
   margin-bottom: 20px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: bold;
   color: #60a383;
 }

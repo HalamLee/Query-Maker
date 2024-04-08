@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import type { UploadUserFile } from 'element-plus';
-import XlsImportIcon from '~/assets/svg/XlsImport.svg';
-import { useAPI } from '../composables/api';
+import type { UploadUserFile } from 'element-plus'
+import XlsImportIcon from '~/assets/svg/XlsImport.svg'
+import { useAPI } from '../composables/api'
 
 const props = defineProps({
   isLoading: Boolean,
   onChangeTranslate: Function,
-});
+})
 
-const fileList = ref<UploadUserFile[]>([]);
+const fileList = ref<UploadUserFile[]>([])
 
 function onClickRemoveFile(uid: number) {
   fileList.value = fileList.value.filter((file) => {
-    file.uid === uid;
-  });
+    file.uid === uid
+  })
 }
 
 async function onClickTranslate() {
   if (props.onChangeTranslate) {
-    props.onChangeTranslate(true);
-    const apiReturn = await useAPI('CREATE_QUERY_TABLE', {});
+    props.onChangeTranslate(true)
+    const apiReturn = await useAPI('CREATE_QUERY_TABLE', {})
 
-    console.log(apiReturn);
+    console.log(apiReturn)
 
-    props.onChangeTranslate(false);
+    props.onChangeTranslate(false)
   }
 }
 </script>
@@ -34,7 +34,8 @@ async function onClickTranslate() {
     v-model:file-list="fileList"
     accept=".xls, .xlsx"
     :disabled="fileList.length !== 0"
-    class="uploader">
+    class="uploader"
+  >
     <div class="form__wrapper">
       <XlsImportIcon class="icon" />
     </div>
@@ -50,16 +51,21 @@ async function onClickTranslate() {
             text
             :icon="ElIconDelete"
             circle
-            @click="onClickRemoveFile(file.uid)" />
+            @click="onClickRemoveFile(file.uid)"
+          />
         </div>
       </div>
     </template>
   </ElUpload>
 
   <ElButtonGroup class="btnContainer">
-    <ElButton class="btn" :icon="ElIconDownload" :disabled="fileList.length > 0"
-      >Download Template</ElButton
+    <ElButton
+      class="btn"
+      :icon="ElIconDownload"
+      :disabled="fileList.length > 0"
     >
+      Download Template
+    </ElButton>
     <ElButton
       class="btn"
       :icon="ElIconTools"
@@ -67,8 +73,9 @@ async function onClickTranslate() {
       :disabled="fileList.length === 0"
       :loading="props.isLoading"
       @click="async () => await onClickTranslate()"
-      >Translate</ElButton
     >
+      Translate
+    </ElButton>
   </ElButtonGroup>
 </template>
 
