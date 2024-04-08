@@ -23,7 +23,4 @@ export default defineNuxtConfig({
     svgo: true,
     defaultImport: 'component',
   },
-  vite: {
-    plugins: [eslintPlugin()],
-  },
 })
