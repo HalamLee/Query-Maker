@@ -4,6 +4,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  ssr: false,
   modules: ['nuxt-svgo', '@element-plus/nuxt'],
   css: ['~/assets/scss/_global.scss'],
   app: {
