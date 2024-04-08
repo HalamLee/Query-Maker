@@ -2,15 +2,15 @@
 const props = defineProps({
   setActiveMenu: Function,
   sidebarItem: Array<{ index: string; title: string; link: string }>,
-});
+})
 
-const activceMenu = ref("");
+const activceMenu = ref('')
 
 function onClickMenu(index: string) {
-  activceMenu.value = index;
+  activceMenu.value = index
 
   if (props.setActiveMenu) {
-    props.setActiveMenu(index);
+    props.setActiveMenu(index)
   }
 }
 </script>
@@ -48,19 +48,28 @@ function onClickMenu(index: string) {
   align-items: center;
 }
 
-#sidebar-item {
+:deep(#sidebar-item) {
   font-size: 15px;
   font-weight: 100;
+  width: 150px;
+  height: 65px;
+  border-radius: 14px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#sidebar-item:hover {
-  color: white;
+#sidebar-item {
+  &:not(.active):hover {
+    color: white;
+  }
 }
 
 #title {
   font-size: 22px;
   font-weight: bold;
-  font-family: "Kavoon", serif;
+  font-family: 'Kavoon', serif;
   color: white;
 }
 
@@ -70,10 +79,13 @@ function onClickMenu(index: string) {
 }
 
 .active {
-  color: white;
+  color: #60a383;
+  background-color: white;
 }
 
 .menuItem {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
