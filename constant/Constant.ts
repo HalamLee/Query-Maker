@@ -12,4 +12,8 @@ export const API: API_INTERFACE = {
     CREATE_QUERY_TABLE: { PATH: '/table/createQuery', TYPE: 'post' },
     CREATE_QUERY_SELECT: { PATH: '/select/createQuery', TYPE: 'post' },
   },
+  ALIAS: {
+    createTable: 'CREATE_QUERY_TABLE',
+    createSelectQuery: 'CREATE_QUERY_SELECT',
+  },
 }

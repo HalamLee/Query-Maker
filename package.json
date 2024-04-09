@@ -17,7 +17,8 @@
     "nuxt": "^3.11.1",
     "nuxt-svgo": "^4.0.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.8",

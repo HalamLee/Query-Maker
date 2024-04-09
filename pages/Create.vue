@@ -7,7 +7,6 @@ const changeMode = (name: string) => {
 }
 
 function onChangeTranslate(state: boolean) {
-  console.log(state)
   isLoading.value = state
 }
 </script>
