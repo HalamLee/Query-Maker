@@ -6,7 +6,7 @@
 
 <style scoped>
 .rollback__wrapper {
-  width: 87%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

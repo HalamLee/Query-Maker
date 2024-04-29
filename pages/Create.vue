@@ -28,7 +28,7 @@ function onChangeTranslate(state: boolean) {
 
 <style scoped>
 .create__wrapper {
-  width: 87%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
